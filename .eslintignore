@@ -1,0 +1,12 @@
+node_modules/
+build/
+dist/
+*.min.js
+.cache/
+*.log
+.DS_Store
+Thumbs.db
+docs/
+package-lock.json
+img/
+assets/
