@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Onest&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-onest: "Onest", sans-serif;
+}

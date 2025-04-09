@@ -1,3 +1,4 @@
+const boom = require('@hapi/boom');
 const query = require('../db/postgres.pool');
 
 class ProductsService {
@@ -9,6 +10,7 @@ class ProductsService {
 
   static async getProductById(id) {
     const { rows } = await query('SELECT * FROM products WHERE id = $1', [id]);
+    if (!rows.length) throw boom.notFound('No se encontro el producto');
     return rows[0];
   }
 

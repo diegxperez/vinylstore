@@ -27,7 +27,7 @@ CREATE TABLE "products" (
   "genre_id" integer NOT NULL,
   "stock" integer NOT NULL,
   "price" DECIMAL(10,2) NOT NULL,
-  "imagen" varchar,
+  "image_url" varchar,
   "created_at" timestamp DEFAULT 'now()'
 );
 
@@ -88,3 +88,65 @@ ALTER TABLE "orders" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
 ALTER TABLE "products" ADD FOREIGN KEY ("artist_id") REFERENCES "artists" ("id");
 
 ALTER TABLE "products" ADD FOREIGN KEY ("genre_id") REFERENCES "genres" ("id");
+
+INSERT INTO genres (genre_name) VALUES
+('Blues'),
+('Christmas'),
+('Classical'),
+('Country'),
+('Dance/EDM'),
+('Disco'),
+('Folk'),
+('Gospel'),
+('HipHop/Rap'),
+('Jazz'),
+('Latin'),
+('Metal'),
+('Pop'),
+('Punk'),
+('R&B/Soul'),
+('Reggae'),
+('Rock');
+
+INSERT INTO artists (artist_name) VALUES
+('Mac Miller'),
+('Kendrick Lamar'),
+('Tyler The Creator'),
+('Travis Scott'),
+('Metro Boomin'),
+('Kid Cudi'),
+('Eminem'),
+('50 Cent'),
+('Jelly Roll'),
+('Freddie Gibbs & Madlib'),
+('Nas'),
+('Snoop Dogg'),
+('Rihanna'),
+('J.Cole'),
+('MF Doom & Madvillain & Madlib'),
+('Playboi Carti');
+
+INSERT INTO products (title, artist_id, genre_id, stock, price, image_url) VALUES
+('Swimming [2LP] Vinyl', 1, 9, 10, 32.00, 'https://vinyl.com/cdn/shop/files/8448090997041_85quality_Mac_Miller_-_Swimming_2LP.webp?v=1734325758&width=800'),
+('good kid, m.A.A.d city [2LP] Vinyl', 2, 9, 5, 29.99, 'https://vinyl.com/cdn/shop/files/8258502394161_85quality_Kendrick_Lamar_-_good_kid_m_A_A_d_city_2LP.webp?v=1734325785&width=800'),
+('IGOR Vinyl', 3, 9, 10, 32.00, 'https://vinyl.com/cdn/shop/files/8258501869873_85quality_Tyler_the_creator_vinyl_igor_LP.webp?v=1734325769&width=800'),
+('To Pimp a Butterfly [2LP] Vinyl', 2, 9, 10, 33.99, 'https://vinyl.com/cdn/shop/files/8258496561457_85quality_Kendrick_Lamar_-_To_Pimp_a_Butterfly_2LP.webp?v=1734325770&width=800'),
+('Rodeo [2LP] Vinyl', 4, 9, 10, 29.00, 'https://vinyl.com/cdn/shop/files/8258508882225_85quality_Travis_Scott_-_Rodeo_2LP.webp?v=1734325728&width=800'),
+('Birds in the Trap Sing McKnight Vinyl', 4, 9, 10, 31.00, 'https://vinyl.com/cdn/shop/files/8258497249585_85quality_Travis_Scott_Birds_In_The_Trap_Sing_McKnight_vinyl.webp?v=1734325783&width=800'),
+('HEROES & VILLAINS Vinyl', 5, 9, 10, 28.00, 'https://vinyl.com/cdn/shop/files/8446308483377_85quality_Metro_Boomin_Heroes_And_Villains_Vinyl.webp?v=1734325931&width=800'),
+('Man On The Moon, Vol. 2: The Legend Of Mr. Rager [2LP] Vinyl', 6, 9, 10, 31.00, 'https://vinyl.com/cdn/shop/files/8448293372209_85quality_Kid_Cudi_-_Man_On_The_Moon_Vol_2_The_Legend_Of_Mr_Rager.webp?v=1734325893&width=800'),
+('Curtain Call: The Hits [2LP] Vinyl', 7, 9, 10, 31.00, 'https://vinyl.com/cdn/shop/files/8258503180593_85quality_Eminem_-_Curtain_Call_The_Hits.webp?v=1734325748&width=800'),
+('Get Rich Or Die Tryin\' [2LP] Vinyl', 8, 9, 10, 39.00, 'https://vinyl.com/cdn/shop/files/8335097069873_85quality_50_Cent_-_Get_Rich_Or_Die_Tryin.webp?v=1734325749&width=800'),
+('Whitsitt Chapel Vinyl', 9, 9, 10, 21.00, 'https://vinyl.com/cdn/shop/files/8446479565105_85quality_Jelly_Roll_vinyl.webp?v=1734325924&width=800'),
+('Bandana Vinyl', 10, 9, 10, 22.00, 'https://vinyl.com/cdn/shop/files/8335088681265_85quality_Freddie_Gibbs_Madlib_-_Bandana.webp?v=1734325927&width=800'),
+('Illmatic [Clear] Vinyl', 11, 9, 10, 49.00, 'https://vinyl.com/cdn/shop/files/439705-Product-0-I-637528078746938707.webp?v=1739420631&width=800'),
+('CALL ME IF YOU GET LOST [2LP] Vinyl', 3, 9, 10, 31.00, 'https://vinyl.com/cdn/shop/files/8258509078833_85quality_CallMeIfYouGetLost_2048x_c7f104f0-81ea-4740-9ca2-b1c6df66cb4a.webp?v=1734325922&width=800'),
+('The Marshall Mathers LP [2LP] Vinyl', 7, 9, 10, 44.00, 'https://vinyl.com/cdn/shop/files/Enimem-MarshalMathers2LP_1200x1200_15c65bac-2927-46e3-83f6-7de63bf4b480.webp?v=1741843218&width=800'),
+('Doggystyle (30th Anniversary Edition) [Clear 2LP] Vinyl', 12, 9, 10, 31.00, 'https://vinyl.com/cdn/shop/files/9202554929457_85quality_4254711-3050342.webp?v=1734325788&width=800'),
+('UTOPIA [2LP] Vinyl', 4, 9, 10, 31.00, 'https://vinyl.com/cdn/shop/files/669512-Product-0-I-638348461204930488.webp?v=1744079793&width=800'),
+('ANTI [2LP] Vinyl', 13, 9, 10, 31.00, 'https://vinyl.com/cdn/shop/files/8448977764657_85quality_Rihanna_ANTI_2LP_vinyl.webp?v=1734325775&width=800'),
+('Wolf [2LP Pink] Vinyl', 3, 9, 10, 24.00, 'https://vinyl.com/cdn/shop/files/9095814283569_85quality_tyler_the_creator_wolf_pink_vinyl.webp?v=1734325796&width=800'),
+('4 Your Eyez Only Vinyl', 14, 9, 10, 35.00, 'https://vinyl.com/cdn/shop/files/8334905475377_85quality_J_Cole_-_4_Your_Eyez_Only.webp?v=1734325736&width=800'),
+('Madvillainy [2LP] Vinyl', 15, 9, 10, 33.00, 'https://vinyl.com/cdn/shop/files/8335079407921_85quality_Madvillain_Madlib_MF_DOOM_-_Madvillainy.webp?v=1734325793&width=800'),
+('Whole Lotta Red [2LP] Vinyl', 16, 9, 10, 31.00, 'https://vinyl.com/cdn/shop/files/8258510127409_85quality_Playboi_Carti_-_Whole_Lotta_Red_2LP.webp?v=1734325795&width=800'),
+('JACKBOYS Vinyl', 4, 9, 10, 19.00, 'https://vinyl.com/cdn/shop/files/8335015510321_85quality_JACKBOYS_self_titled_Vinyl.webp?v=1734326239&width=800');
