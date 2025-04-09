@@ -9,6 +9,6 @@ const pool = new Pool({
   database: process.env.DB_DATABASE
 });
 
-const query = (text, params) => pool.query(text, params)
+const query = (text, params) => pool.query(text, params);
 
 module.exports = query;

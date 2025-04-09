@@ -6,9 +6,13 @@ class ProductsController {
     res.status(200).json(products);
   }
 
-  static async getProductById(req, res) {
-    const product = await ProductsService.getProductById(req.params.id);
-    res.status(200).json(product);
+  static async getProductById(req, res, next) {
+    try {
+      const product = await ProductsService.getProductById(req.params.id);
+      res.status(200).json(product);
+    } catch (error) {
+      next(error)
+    }
   };
 
   static async createProduct(req, res) {
@@ -21,9 +25,7 @@ class ProductsController {
     const { id } = req.params;
     const update = req.body;
     const updatedProduct = await ProductsService.updateProduct(id, update);
-    res.status(200).json(
-      updatedProduct
-    )
+    res.status(200).json(updatedProduct);
   }
 
   static async deleteProduct(req, res) {
