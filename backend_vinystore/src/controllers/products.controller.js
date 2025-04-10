@@ -16,8 +16,8 @@ class ProductsController {
   };
 
   static async createProduct(req, res) {
-    const { title, artist_id, genre_id, stock, price, imagen } = req.body;
-    const newProduct = await ProductsService.createProduct({ title, artist_id, genre_id, stock, price, imagen });
+    const { title, artist, genre, stock, price, image_url } = req.body;
+    const newProduct = await ProductsService.createProduct({ title, artist, genre, stock, price, image_url });
     res.status(201).json(newProduct);
   }
 

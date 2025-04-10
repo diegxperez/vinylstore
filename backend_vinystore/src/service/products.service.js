@@ -15,8 +15,8 @@ class ProductsService {
   }
 
   static async createProduct(productData) {
-    const { title, artist_id, genre_id, stock, price, imagen } = productData;
-    const result = await query('INSERT INTO products (title, artist_id, genre_id, stock, price, imagen) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', [title, artist_id, genre_id, stock, price, imagen]);
+    const { title, artist, genre, stock, price, image_url } = productData;
+    const result = await query('INSERT INTO products (title, artist, genre, stock, price, image_url) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', [title, artist, genre, stock, price, image_url]);
     return result.rows[0];
   }
 
