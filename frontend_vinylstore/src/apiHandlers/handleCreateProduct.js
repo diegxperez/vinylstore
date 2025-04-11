@@ -1,4 +1,4 @@
-import formCreateProduct from "../utils/formCreateProduct";
+import formCreateProduct from "../api/CreateProduct";
 
 const handleFormSubmit = async (event) => {
   event.preventDefault();
