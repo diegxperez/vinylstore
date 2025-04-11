@@ -13,9 +13,7 @@ async function formCreateProduct(productData) {
       console.error(`Error 404:  ${error}`);
       return null;
     }
-    const newProduct = await res.json();
-    console.log('Exit: Product created', newProduct);
-    return newProduct;
+    return true;
   } catch (error) {
     console.log(`Error: ${error}`);
     return null;

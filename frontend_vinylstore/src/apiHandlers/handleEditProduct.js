@@ -1,4 +1,4 @@
-import formEditProduct from "../utils/formEditProduct ";
+import formEditProduct from "../api/EditVinyls";
 
 const handleEditForm = async (event) => {
   event.preventDefault();
@@ -28,11 +28,11 @@ const handleEditForm = async (event) => {
   }
 
   try {
-    const createdProduct = await formEditProduct(id, newProductData);
-    alert(createdProduct);
+    const productUpdated = await formEditProduct(id, newProductData);
+    if (productUpdated) alert('Product updated successfully');
   } catch (error) {
-    console.error('Error al crear el producto', error);
-    alert(`Error al crear el producto: ${error.message}`);
+    console.error('Failed to create the product', error);
+    alert(`Failed to create the product: ${error.message}`);
   }
 };
 

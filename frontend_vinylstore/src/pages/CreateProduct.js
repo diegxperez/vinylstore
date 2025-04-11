@@ -40,7 +40,7 @@ const CreateProduct = () => {
             placeholder="https://vinyl.com/cdn/image" required />
         </div>
         <button type="submit"
-          class="text-gray-800 bg-blue-100 hover:bg-blue-00 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Registrar</button>
+          class="text-gray-800 bg-blue-100 hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium hover:font-semibold rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center cursor-pointer">Registrar</button>
       </form>
       </div>
   `;
